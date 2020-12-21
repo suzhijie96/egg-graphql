@@ -1,0 +1,18 @@
+enum Gender {
+  MALE
+  FEMALE
+  NONE
+}
+
+type User {
+  name: String!
+  gender: Gender!
+  tags: [String!]!
+}
+
+type Query {
+  "查询所有用户列表"
+  users: [User!]!
+  "根据 name 查询对应的用户信息"
+  user(name: String!): User
+}

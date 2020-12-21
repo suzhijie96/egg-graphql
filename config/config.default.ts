@@ -21,3 +21,14 @@ export default (appInfo: EggAppInfo) => {
     ...bizConfig,
   };
 };
+// 配置 graphql
+exports.graphql = {
+  router: '/graphql',
+  // 是否创建默认的空 schema
+  defaultEmptySchema: false,
+  // 是否加载开发者工具 (playground), 默认开启, 路由同 router 字段, 使用浏览器打开该可见
+  playground: true,
+};
+
+// 使用 graphql 插件，拦截请求
+exports.middleware = [ 'graphql' ];
